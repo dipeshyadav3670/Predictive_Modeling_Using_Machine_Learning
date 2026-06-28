@@ -1,0 +1,33 @@
+============================================================
+  DATA CLEANING AUDIT REPORT
+============================================================
+
+📦 Raw shape : 530 rows × 11 columns
+
+[1] Duplicates removed  : 27
+    Shape after step 1  : (503, 11)
+
+[2] Category labels standardised → <StringArray>
+['Sports', 'Groceries', 'Books', 'Clothing', 'Electronics']
+Length: 5, dtype: str
+
+[3] Missing values before treatment:
+customer_age    30
+discount_pct    25
+rating          40
+    Missing values after treatment : 0
+
+[4] Outlier treatment (IQR method):
+    unit_price      → bounds [-256.53, 757.03]  |  10 values capped
+    quantity        → bounds [-7.25, 22.75]  |  8 values capped
+    customer_age    → bounds [-1.50, 90.50]  |  5 values capped
+
+[5] Revenue recalculated after price / quantity correction
+
+[6] New columns added : month, day_of_week, age_group
+
+============================================================
+  CLEANING COMPLETE
+  Final shape : 503 rows × 14 columns
+  Missing     : 2 cells
+============================================================
